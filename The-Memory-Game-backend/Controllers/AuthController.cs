@@ -15,6 +15,23 @@ namespace TheMemoryGameBackend.Controllers
             _dbContext = dbContext;
         }
 
+
+        private string GenerateUniqueUsername(string email){
+            // Generate a unique username based on the email and timestamp
+            var emailPrefix = email.Split('@')[0];
+            var timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+            var username = emailPrefix + timestamp;
+
+            // Verify uniqueness and avoid conflicts
+            int suffix = 1;
+            while (_dbContext.Users.Any(u => u.Username == username))
+            {
+                username = $"{emailPrefix}_{timestamp}_{suffix}";
+                suffix++;
+            }
+            return username;
+        }
+
         [HttpPost("register")]
         public IActionResult Register([FromBody] UserRequest request)
         {
@@ -40,12 +57,14 @@ namespace TheMemoryGameBackend.Controllers
             }
 
             var hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
+            var username = GenerateUniqueUsername(request.Email);
 
-            // 添加用户到数据库
+            // Add user data into the database
             var user = new User
             {
                 Email = request.Email,
-                Password = hashedPassword
+                Password = hashedPassword,
+                Username = username
             };
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
@@ -53,8 +72,9 @@ namespace TheMemoryGameBackend.Controllers
             return Ok(new Response<object>
             {
                 Success = true,
-                Message = "注册成功",
-                Code = 200 // HTTP 200 OK
+                Message = "Successfully registered",
+                Code = 200, // HTTP 200 OK
+                Data = new { Username = username }
             });
         }
 
