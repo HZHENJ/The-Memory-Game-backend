@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("The-Memory-Game-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0784cf95cf637727a6f2f7c85aba4f3932978f0f")]
 [assembly: System.Reflection.AssemblyProductAttribute("The-Memory-Game-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("The-Memory-Game-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
