@@ -84,8 +84,6 @@
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/The-Memory-Game-backend.AssemblyInfo.cs
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/The-Memory-Game-backend.csproj.CoreCompileInputs.cache
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/The-Memory-Game-backend.MvcApplicationPartsAssemblyInfo.cache
-/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/The-Memory-Game-backend.RazorAssemblyInfo.cache
-/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/The-Memory-Game-backend.RazorAssemblyInfo.cs
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/The-Memory-Game-backend.sourcelink.json
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/staticwebassets.build.json
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/staticwebassets.development.json
@@ -94,12 +92,11 @@
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.The-Memory-Game-backend.props
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.The-Memory-Game-backend.props
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/staticwebassets.pack.json
-/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/scopedcss/bundle/The-Memory-Game-backend.styles.css
-/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/scopedcss/projectbundle/The-Memory-Game-backend.bundle.scp.css
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/The-Memo.685330BE.Up2Date
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/The-Memory-Game-backend.dll
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/refint/The-Memory-Game-backend.dll
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/The-Memory-Game-backend.pdb
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/The-Memory-Game-backend.genruntimeconfig.cache
 /Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/ref/The-Memory-Game-backend.dll
+/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/bin/Debug/net8.0/BCrypt.Net-Next.dll

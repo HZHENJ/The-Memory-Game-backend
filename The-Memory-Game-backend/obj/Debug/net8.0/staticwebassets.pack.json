@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/scopedcss/projectbundle/The-Memory-Game-backend.bundle.scp.css",
-      "PackagePath": "staticwebassets/The-Memory-Game-backend.bundle.scp.css"
-    },
-    {
       "Id": "/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

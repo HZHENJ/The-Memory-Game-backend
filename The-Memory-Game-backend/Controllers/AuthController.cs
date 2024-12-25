@@ -16,7 +16,7 @@ namespace TheMemoryGameBackend.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] RegisterRequest request)
+        public IActionResult Register([FromBody] UserRequest request)
         {
             if (string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Password))
             {
@@ -45,7 +45,7 @@ namespace TheMemoryGameBackend.Controllers
             var user = new User
             {
                 Email = request.Email,
-                Password = request.Password // 实际项目中请加密密码
+                Password = hashedPassword
             };
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
@@ -57,5 +57,42 @@ namespace TheMemoryGameBackend.Controllers
                 Code = 200 // HTTP 200 OK
             });
         }
+
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] UserRequest request)
+        {
+            // Check if the requested data is valid
+            if (string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Password)) {
+                return BadRequest(new Response<object> {
+                    Success = false,
+                    Message = "Email and password cannot be empty",
+                    Code = 400 // HTTP 400 Bad Request
+                });
+            }
+
+            // Find users
+            var user = _dbContext.Users.FirstOrDefault(u => u.Email == request.Email);
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
+
+            if (user == null || hashedPassword != user.Password) {
+                return Unauthorized(new Response<object> {
+                    Success = false,
+                    Message = "Email or password is incorrect",
+                    Code = 401 // HTTP 401 Unauthorized
+                });
+            }
+
+            return Ok(new Response<object>
+            {
+                Success = true,
+                Message = "Login successful",
+                Code = 200, // HTTP 200 OK
+                Data = new {
+                    user.Id,
+                    user.Email
+                }
+            });
+        }
     }
+
 }
