@@ -15,7 +15,6 @@ namespace TheMemoryGameBackend.Controllers
             _dbContext = dbContext;
         }
 
-
         private string GenerateUniqueUsername(string email){
             // Generate a unique username based on the email and timestamp
             var emailPrefix = email.Split('@')[0];
@@ -40,7 +39,7 @@ namespace TheMemoryGameBackend.Controllers
                 return BadRequest(new Response<object>
                 {
                     Success = false,
-                    Message = "邮箱和密码不能为空",
+                    Message = "Email and password cannot be empty",
                     Code = 400 // HTTP 400 Bad Request
                 });
             }
@@ -51,7 +50,7 @@ namespace TheMemoryGameBackend.Controllers
                 return Conflict(new Response<object>
                 {
                     Success = false,
-                    Message = "邮箱已被注册",
+                    Message = "Email has been registered",
                     Code = 409 // HTTP 409 Conflict
                 });
             }
@@ -109,7 +108,8 @@ namespace TheMemoryGameBackend.Controllers
                 Code = 200, // HTTP 200 OK
                 Data = new {
                     user.Id,
-                    user.Email
+                    user.Email,
+                    user.Username
                 }
             });
         }
