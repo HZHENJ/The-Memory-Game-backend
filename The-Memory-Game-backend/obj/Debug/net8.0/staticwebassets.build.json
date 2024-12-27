@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3GXOYj2Ex2z1zOEboMt+MoPv1ksmukTGptcBOPO8RNA=",
+  "Hash": "MwppIJtTXSpJQVyVMq5J12ofnJG037nGNbutqsSCgSs=",
   "Source": "The-Memory-Game-backend",
   "BasePath": "_content/The-Memory-Game-backend",
   "Mode": "Default",
@@ -16,6 +16,44 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/scopedcss/bundle/The-Memory-Game-backend.styles.css",
+      "SourceId": "The-Memory-Game-backend",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/scopedcss/bundle/",
+      "BasePath": "_content/The-Memory-Game-backend",
+      "RelativePath": "The-Memory-Game-backend.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/scopedcss/bundle/The-Memory-Game-backend.styles.css"
+    },
+    {
+      "Identity": "/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/scopedcss/projectbundle/The-Memory-Game-backend.bundle.scp.css",
+      "SourceId": "The-Memory-Game-backend",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "BasePath": "_content/The-Memory-Game-backend",
+      "RelativePath": "The-Memory-Game-backend.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/obj/Debug/net8.0/scopedcss/projectbundle/The-Memory-Game-backend.bundle.scp.css"
+    },
     {
       "Identity": "/Users/jia/Desktop/资料/NUS/SA4108/CA/backend/The-Memory-Game-backend/wwwroot/css/site.css",
       "SourceId": "The-Memory-Game-backend",

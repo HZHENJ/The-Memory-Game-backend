@@ -91,9 +91,8 @@ namespace TheMemoryGameBackend.Controllers
 
             // Find users
             var user = _dbContext.Users.FirstOrDefault(u => u.Email == request.Email);
-            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
 
-            if (user == null || hashedPassword != user.Password) {
+            if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.Password)) {
                 return Unauthorized(new Response<object> {
                     Success = false,
                     Message = "Email or password is incorrect",
