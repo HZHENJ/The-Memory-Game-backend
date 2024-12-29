@@ -63,7 +63,8 @@ namespace TheMemoryGameBackend.Controllers
             {
                 Email = request.Email,
                 Password = hashedPassword,
-                Username = username
+                Username = username,
+                Type = 0
             };
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
@@ -73,7 +74,12 @@ namespace TheMemoryGameBackend.Controllers
                 Success = true,
                 Message = "Successfully registered",
                 Code = 200, // HTTP 200 OK
-                Data = new { Username = username }
+                Data = new { 
+                    user.Id,
+                    user.Email,
+                    user.Username,
+                    user.Type  
+                 }
             });
         }
 
@@ -108,10 +114,33 @@ namespace TheMemoryGameBackend.Controllers
                 Data = new {
                     user.Id,
                     user.Email,
-                    user.Username
+                    user.Username,
+                    user.Type          
                 }
             });
         }
+    
+        [HttpPost("payment")]
+        public IActionResult Payment([FromBody] UserRequestWithId request){
+            var user = _dbContext.Users.FirstOrDefault(u => u.Id == request.Id);
+            
+            if (request.Type == 0 || request.Type == 1){
+                user.Type = request.Type;
+                _dbContext.SaveChanges();
+                return Ok(new Response<object>{
+                    Success = true,
+                    Message = "Payment successful",
+                    Code = 200
+                });
+            } else {
+                return BadRequest(new Response<object>{
+                    Success = false,
+                    Message = "Invalid payment type",
+                    Code = 400
+                });
+            }
+        }
+    
     }
 
 }

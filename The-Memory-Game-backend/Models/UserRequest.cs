@@ -5,4 +5,10 @@ namespace TheMemoryGameBackend.Models
         public string Email { get; set; }
         public string Password { get; set; }
     }
+
+    public class UserRequestWithId
+    {
+        public int Id { get; set; }
+        public int Type { get; set; }
+    }
 }
