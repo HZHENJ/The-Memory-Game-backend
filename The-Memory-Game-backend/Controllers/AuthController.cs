@@ -123,24 +123,32 @@ namespace TheMemoryGameBackend.Controllers
         [HttpPost("payment")]
         public IActionResult Payment([FromBody] UserRequestWithId request){
             var user = _dbContext.Users.FirstOrDefault(u => u.Id == request.Id);
-            
-            if (request.Type == 0 || request.Type == 1){
-                user.Type = request.Type;
-                _dbContext.SaveChanges();
-                return Ok(new Response<object>{
-                    Success = true,
-                    Message = "Payment successful",
-                    Code = 200
-                });
+            if (user != null){
+                if (user.Type == 1){
+                    user.Type = 0;
+                    _dbContext.SaveChanges();
+                    return Ok(new Response<object>{
+                        Success = true,
+                        Message = "Cancel successful",
+                        Code = 200
+                    });
+                } else {
+                    // Payment logic
+                    user.Type = 1;
+                    _dbContext.SaveChanges();
+                    return Ok(new Response<object>{
+                        Success = true,
+                        Message = "Payment successful",
+                        Code = 200
+                    });
+                }
             } else {
-                return BadRequest(new Response<object>{
+                return NotFound(new Response<object>{
                     Success = false,
-                    Message = "Invalid payment type",
-                    Code = 400
+                    Message = "User not found",
+                    Code = 404
                 });
             }
         }
-    
     }
-
 }
