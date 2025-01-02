@@ -150,5 +150,30 @@ namespace TheMemoryGameBackend.Controllers
                 });
             }
         }
+
+        [HttpGet("getUserDetails")]
+        public IActionResult GetUserDetials([FromQuery] UserRequestWithId request){
+            var user = _dbContext.Users.FirstOrDefault(u => u.Id == request.Id);
+            if (user != null){
+                return Ok(new Response<object>{
+                    Success = true,
+                    Message = "User details retrieved",
+                    Code = 200,
+                    Data = new {
+                        user.Id,
+                        user.Email,
+                        user.Username,
+                        user.Type
+                    }
+                });
+            } else {
+                return NotFound(new Response<object>{
+                    Success = false,
+                    Message = "User not found",
+                    Code = 404
+                });
+            }
+        }
+    
     }
 }
