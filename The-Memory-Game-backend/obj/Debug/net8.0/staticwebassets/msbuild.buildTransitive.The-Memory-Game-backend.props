@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\buildMultiTargeting\The-Memory-Game-backend.props" />
+  <Import Project="../buildMultiTargeting/The-Memory-Game-backend.props" />
 </Project>
