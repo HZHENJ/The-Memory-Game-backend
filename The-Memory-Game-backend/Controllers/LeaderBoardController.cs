@@ -4,39 +4,39 @@ using TheMemoryGameBackend.Models;
 
 namespace TheMemoryGameBackend.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class LeaderBoardController: ControllerBase
-    {
-        private readonly ApplicationDbContext _dbContext;
+	[ApiController]
+	[Route("api/[controller]")]
+	public class LeaderBoardController : ControllerBase
+	{
+		private readonly ApplicationDbContext _dbContext;
 
-        public LeaderBoardController(ApplicationDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+		public LeaderBoardController(ApplicationDbContext dbContext)
+		{
+			_dbContext = dbContext;
+		}
 
-        // èŽ·å–æŽ’è¡Œæ¦œ
-        [HttpGet("getScores")]
-        public IActionResult GetScores()
-        {
-            // èŽ·å–æŽ’åå‰åçš„ç”¨æˆ·åŠå…¶åˆ†æ•°
-            var scores = _dbContext.Scores
-                .OrderBy(s => s.ElapsedTime)
-                .Take(10)
-                .Select(s => new
-                {
-                    Username = s.User.Username,
-                    ElapsedTime = s.ElapsedTime
-                });
+		// »ñÈ¡ÅÅÐÐ°ñ
+		[HttpGet("getScores")]
+		public IActionResult GetScores()
+		{
+			// »ñÈ¡ÅÅÃûÇ°Ê®µÄÓÃ»§¼°Æä·ÖÊý
+			var scores = _dbContext.Scores
+				.OrderBy(s => s.ElapsedTime)
+				.Take(10)
+				.Select(s => new
+				{
+					Username = s.User.Username,
+					ElapsedTime = s.ElapsedTime
+				});
 
-            return Ok(new Response<object>
-            {
-                Success = true,
-                Message = "Scores retrieved",
-                Code = 200,
-                Data = scores
-            });
-        }
-    }
+			return Ok(new Response<object>
+			{
+				Success = true,
+				Message = "Scores retrieved",
+				Code = 200,
+				Data = scores
+			});
+		}
+	}
 
 }
